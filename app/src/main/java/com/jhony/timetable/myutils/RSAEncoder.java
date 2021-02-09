@@ -1,4 +1,4 @@
-package com.jhony.timetable;
+package com.jhony.timetable.myutils;
 
 import java.io.UnsupportedEncodingException;
 import java.math.BigInteger;

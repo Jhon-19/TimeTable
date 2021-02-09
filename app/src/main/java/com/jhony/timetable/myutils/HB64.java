@@ -1,4 +1,4 @@
-package com.jhony.timetable;
+package com.jhony.timetable.myutils;
 
 import static java.lang.Integer.parseInt;
 
