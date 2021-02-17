@@ -1,16 +1,22 @@
-package com.jhony.timetable.myutils;
+package com.jhony.timetable.myrequests;
 
+import android.content.Context;
+import android.os.Looper;
 import android.util.Log;
+import android.widget.Toast;
 
-import com.jhony.timetable.datas.KbData;
-import com.jhony.timetable.datas.SjkData;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.jhony.timetable.TimeTableActivity;
+import com.jhony.timetable.mycourses.UpdateCourses;
+import com.jhony.timetable.mydatas.KbData;
+import com.jhony.timetable.mydatas.SjkData;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.litepal.LitePal;
 
 import java.io.IOException;
 import java.util.List;
@@ -38,7 +44,18 @@ public class RequestInfos {
     private String JSESSION = null;
     private String route = null;
 
-    public RequestInfos(){
+    //用户账号密码
+    private String mUserName;
+    private String mPassword;
+
+    //上下文
+    private Context mContext;
+
+    public RequestInfos(String userName, String password, Context context) {
+        //设置账号密码
+        mUserName = userName;
+        mPassword = password;
+        mContext = context;
         //单例请求client
         //手动管理cookie
         client = new OkHttpClient.Builder()
@@ -62,8 +79,8 @@ public class RequestInfos {
                 .build();
     }
 
-    public static void build(){
-        new RequestInfos().getCsrftoken();
+    public static void build(String userName, String password, Context context) {
+        new RequestInfos(userName, password, context).getCsrftoken();
     }
 
     //获取csrftoken
@@ -79,6 +96,7 @@ public class RequestInfos {
         client.newCall(requestOfCsrftoken).enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
+                showToast("网络故障...");
                 Log.i(TAG, "fail of token");
             }
 
@@ -127,6 +145,7 @@ public class RequestInfos {
         client.newCall(requestOfKey).enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
+                showToast("网络故障...");
                 Log.i(TAG, "fail of key");
             }
 
@@ -146,7 +165,7 @@ public class RequestInfos {
                 }
 //                Log.i(TAG, modulus+"\n"+exponent);
                 //加密
-                String password = "zl08252000";
+                String password = mPassword;
                 String temp = RSAEncoder.RSAEncrypt(password, HB64.b64tohex(modulus), HB64.b64tohex(exponent));
                 mm = HB64.hex2b64(temp);
 
@@ -160,7 +179,7 @@ public class RequestInfos {
         String postSite = "http://bkxk.whu.edu.cn/xtgl/login_slogin.html?time=" + currentTime;
         RequestBody body = new FormBody.Builder()
                 .add("csrftoken", csrftoken)
-                .add("yhm", "2018302030036")
+                .add("yhm", mUserName)
                 .add("mm", mm)
                 .build();
         Request request = new Request.Builder()
@@ -199,7 +218,6 @@ public class RequestInfos {
         client.newCall(requestOfMainPage).enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
-                System.out.println("failed");
             }
 
             @Override
@@ -238,18 +256,26 @@ public class RequestInfos {
                     JSONObject jsons = new JSONObject(result);
                     handleSjk(jsons);
                     handleKb(jsons);
+                    showToast("导入课程成功!");
                 } catch (JSONException e) {
+                    showToast("账号密码错误...");
                     e.printStackTrace();
                 }
-
                 //测试数据库部分
-                List<KbData> datas = LitePal.findAll(KbData.class);
-//                Log.i(TAG, String.valueOf(datas.size()));
-                for(KbData data : datas){
-                    Log.i(TAG, data.getKcmc());
-                }
+//                List<KbData> datas = LitePal.findAll(KbData.class);
+////                Log.i(TAG, String.valueOf(datas.size()));
+//                for(KbData data : datas){
+//                    Log.i(TAG, data.getKcmc());
+//                }
             }
         });
+    }
+
+    //弹出提示信息
+    private void showToast(String message) {
+        Looper.prepare();
+        Toast.makeText(mContext, message, Toast.LENGTH_SHORT).show();
+        Looper.loop();
     }
 
     //处理json数据1
@@ -266,8 +292,6 @@ public class RequestInfos {
 
             data.setJsxm(course.getString("jsxm"));
             data.setKcmc(course.getString("kcmc"));
-            data.setQtkcgs(course.getString("qtkcgs"));
-            data.setSjkcgs(course.getString("sjkcgs"));
             data.saveOrUpdate("mKcmc=?", data.getKcmc());
 //            datas[i] = data;
         }

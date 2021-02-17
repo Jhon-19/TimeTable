@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="header" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">15dp</item>
+        <item name="android:layout_height">80dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:background">@color/background</item>
+    </style>
+
+    <style name="timespan" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_width">50dp</item>
+        <item name="android:layout_height">100dp</item>
+        <item name="android:background">@color/background</item>
+    </style>
+
+    <style name="placeholder" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_height">80dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:visibility">invisible</item>
+        <item name="android:text">@string/empty</item>
+    </style>
+
+    <style name="show_items" parent="Widget.AppCompat.CompoundButton.CheckBox">
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <style name="user_settings" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_column">0</item>
+        <item name="android:layout_width">100dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_rowWeight">1</item>
+        <item name="android:textSize">20dp</item>
+    </style>
+</resources>

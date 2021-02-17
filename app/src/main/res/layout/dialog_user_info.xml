@@ -1,0 +1,231 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:rowCount="3">
+
+        <TextView
+            style="@style/user_settings"
+            android:layout_row="0"
+            android:text="@string/user_name" />
+
+        <EditText
+            android:id="@+id/user_name_text"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center_vertical"
+            android:textSize="20sp" />
+
+        <TextView
+            style="@style/user_settings"
+            android:layout_row="1"
+            android:text="@string/password" />
+
+        <EditText
+            android:id="@+id/password_text"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center_vertical"
+            android:textSize="20sp" />
+
+        <TextView
+            style="@style/user_settings"
+            android:layout_row="2"
+            android:text="@string/start_week" />
+
+        <Spinner
+            android:id="@+id/current_week"
+            android:layout_row="2"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center_vertical" />
+    </GridLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/change_background"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="99dp"
+            android:layout_marginEnd="32dp"
+            android:backgroundTint="#0AD7F3"
+            android:text="@string/change_background"
+            app:layout_constraintBottom_toTopOf="@+id/add_courses"
+            app:layout_constraintEnd_toStartOf="@+id/reset_table"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/reset_table"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="99dp"
+            android:backgroundTint="#A47BEF"
+            android:text="@string/reset_table"
+            app:layout_constraintBottom_toTopOf="@+id/import_courses"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/change_background"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/add_courses"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="99dp"
+            android:layout_marginEnd="32dp"
+            android:backgroundTint="#3C16EA"
+            android:text="@string/add_courses"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/import_courses"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/change_background" />
+
+        <Button
+            android:id="@+id/import_courses"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="99dp"
+            android:backgroundTint="#A8258BF1"
+            android:text="@string/import_courses"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/add_courses"
+            app:layout_constraintTop_toBottomOf="@+id/reset_table" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <HorizontalScrollView
+        android:id="@+id/user_course"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:fillViewport="true">
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:rowCount="5">
+
+            <!--        课程名设置-->
+            <TextView
+                style="@style/user_settings"
+                android:layout_row="0"
+                android:text="@string/kcmc" />
+
+            <EditText
+                android:id="@+id/user_course_name"
+                android:layout_width="300dp"
+                android:layout_row="0"
+                android:layout_column="1"
+                android:textSize="20sp" />
+
+            <!--        教室设置-->
+            <TextView
+                style="@style/user_settings"
+                android:layout_row="1"
+                android:text="@string/cdmc" />
+
+            <EditText
+                android:id="@+id/user_classroom"
+                android:layout_width="300dp"
+                android:layout_row="1"
+                android:layout_column="1"
+                android:textSize="20sp" />
+
+            <!--        星期设置-->
+            <TextView
+                style="@style/user_settings"
+                android:layout_row="2"
+                android:text="@string/week" />
+
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_row="2"
+                android:layout_column="1"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/user_start_week"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/to"
+                    android:textSize="20sp" />
+
+                <Spinner
+                    android:id="@+id/user_end_week"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/day"
+                    android:textSize="20sp" />
+
+                <Spinner
+                    android:id="@+id/user_day"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <!--        节数设置-->
+            <TextView
+                style="@style/user_settings"
+                android:layout_row="3"
+                android:text="@string/jc" />
+
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_row="3"
+                android:layout_column="1"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/user_start_joint"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/to"
+                    android:textSize="20sp" />
+
+                <Spinner
+                    android:id="@+id/user_end_joint"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+        </GridLayout>
+
+    </HorizontalScrollView>
+
+</LinearLayout>

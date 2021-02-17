@@ -1,4 +1,4 @@
-package com.jhony.timetable.datas;
+package com.jhony.timetable.mydatas;
 
 import org.litepal.crud.LitePalSupport;
 
@@ -6,8 +6,6 @@ public class SjkData extends LitePalSupport {
     private int id;
     private String mJsxm;
     private String mKcmc;
-    private String mQtkcgs;
-    private String mSjkcgs;
 
     public int getId() {
         return id;
@@ -29,24 +27,9 @@ public class SjkData extends LitePalSupport {
         mKcmc = kcmc;
     }
 
-    public String getQtkcgs() {
-        return mQtkcgs;
-    }
-
-    public void setQtkcgs(String qtkcgs) {
-        mQtkcgs = qtkcgs;
-    }
-
-    public String getSjkcgs() {
-        return mSjkcgs;
-    }
-
-    public void setSjkcgs(String sjkcgs) {
-        mSjkcgs = sjkcgs;
-    }
 
     @Override
     public String toString() {
-        return this.getJsxm()+" "+getKcmc()+" "+getQtkcgs()+" "+getSjkcgs()+"\n";
+        return this.getJsxm()+" "+getKcmc()+"\n";
     }
 }

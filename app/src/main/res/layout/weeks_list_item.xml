@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--    纵向显示文本-->
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/week_item"
+    android:background="#0800FF"
+    android:textColor="#ffffff"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_margin="5dp"
+    android:layout_gravity="center_horizontal"
+    android:ems="1"
+    android:textAlignment="center"
+    android:textSize="17dp" />
+

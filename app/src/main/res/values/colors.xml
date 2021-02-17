@@ -7,4 +7,17 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+<!--    课表中的颜色-->
+<!--    本周课程-->
+    <color name="green">#8000FF00</color>
+    <color name="orange_dark">#80E84716</color>
+    <color name="purple_dark">#803700B3</color>
+    <color name="yellow">#80FFD70F</color>
+    <color name="blue">#80012BFF</color>
+    <color name="pink">#80FD06DC</color>
+<!--    非本周课程-->
+    <color name="gray">#80BAC6C4</color>
+<!--    header背景色-->
+    <color name="background">#57D7E4F4</color>
 </resources>

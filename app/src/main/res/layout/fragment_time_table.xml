@@ -1,6 +1,291 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <LinearLayout
+        android:id="@+id/change_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/week_list"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#570F99F6" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/sjk_list"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#570F99F6"
+            android:orientation="vertical">
+
+            <CheckBox
+                android:id="@+id/show_current"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="#5300EC"
+                android:text="@string/show_current_courses"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.05"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <CheckBox
+                android:id="@+id/show_un_current"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="#3A1AC6"
+                android:text="@string/show_un_current_courses"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.05"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="1"
+            android:fillViewport="true"
+            android:scrollbars="none">
+
+            <GridLayout
+                android:id="@+id/course_table"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="8"
+                android:rowCount="14">
+
+                <!--            为每个单元格指定宽度和高度以确定形状-->
+                <!--            第一格width:60dp, height:80dp-->
+                <!--            第一行右边每格width_weight = 1, height:80dp-->
+                <!--            第一列下面每格width:60dp, height:100dp-->
+
+                <com.jhony.timetable.mycourses.TimespanView
+                    style="@style/timespan"
+                    android:layout_row="1"
+                    android:layout_rowWeight="1"
+                    android:layout_column="0"
+                    android:text="@string/course1" />
+
+                <com.jhony.timetable.mycourses.TimespanView
+                    style="@style/timespan"
+                    android:layout_row="2"
+                    android:layout_column="0"
+                    android:text="@string/course2" />
+
+                <com.jhony.timetable.mycourses.TimespanView
+                    style="@style/timespan"
+                    android:layout_row="3"
+                    android:layout_column="0"
+                    android:text="@string/course3" />
+
+                <com.jhony.timetable.mycourses.TimespanView
+                    style="@style/timespan"
+                    android:layout_row="4"
+                    android:layout_column="0"
+                    android:text="@string/course4" />
+
+                <com.jhony.timetable.mycourses.TimespanView
+                    style="@style/timespan"
+                    android:layout_row="5"
+                    android:layout_column="0"
+                    android:text="@string/course5" />
+
+                <com.jhony.timetable.mycourses.TimespanView
+                    style="@style/timespan"
+                    android:layout_row="6"
+                    android:layout_column="0"
+                    android:text="@string/course6" />
+
+                <com.jhony.timetable.mycourses.TimespanView
+                    style="@style/timespan"
+                    android:layout_row="7"
+                    android:layout_column="0"
+                    android:text="@string/course7" />
+
+                <com.jhony.timetable.mycourses.TimespanView
+                    style="@style/timespan"
+                    android:layout_row="8"
+                    android:layout_column="0"
+                    android:text="@string/course8" />
+
+                <com.jhony.timetable.mycourses.TimespanView
+                    style="@style/timespan"
+                    android:layout_row="9"
+                    android:layout_column="0"
+                    android:text="@string/course9" />
+
+                <com.jhony.timetable.mycourses.TimespanView
+                    style="@style/timespan"
+                    android:layout_row="10"
+                    android:layout_column="0"
+                    android:text="@string/course10" />
+
+                <com.jhony.timetable.mycourses.TimespanView
+                    style="@style/timespan"
+                    android:layout_row="11"
+                    android:layout_column="0"
+                    android:text="@string/course11" />
+
+                <com.jhony.timetable.mycourses.TimespanView
+                    style="@style/timespan"
+                    android:layout_row="12"
+                    android:layout_column="0"
+                    android:text="@string/course12" />
+
+                <com.jhony.timetable.mycourses.TimespanView
+                    style="@style/timespan"
+                    android:layout_row="13"
+                    android:layout_column="0"
+                    android:text="@string/course13" />
+
+                <!--            占位TextView-->
+                <TextView
+                    style="@style/placeholder"
+                    android:layout_width="50dp"
+                    android:layout_row="0"
+                    android:layout_column="0" />
+
+                <TextView
+                    style="@style/placeholder"
+                    android:layout_row="0"
+                    android:layout_column="1"
+                    android:layout_columnWeight="1" />
+
+                <TextView
+                    style="@style/placeholder"
+                    android:layout_row="0"
+                    android:layout_column="2"
+                    android:layout_columnWeight="1" />
+
+                <TextView
+                    style="@style/placeholder"
+                    android:layout_row="0"
+                    android:layout_column="3"
+                    android:layout_columnWeight="1" />
+
+                <TextView
+                    style="@style/placeholder"
+                    android:layout_row="0"
+                    android:layout_column="4"
+                    android:layout_columnWeight="1" />
+
+                <TextView
+                    style="@style/placeholder"
+                    android:layout_row="0"
+                    android:layout_column="5"
+                    android:layout_columnWeight="1" />
+
+                <TextView
+                    style="@style/placeholder"
+                    android:layout_row="0"
+                    android:layout_column="6"
+                    android:layout_columnWeight="1" />
+
+                <TextView
+                    style="@style/placeholder"
+                    android:layout_row="0"
+                    android:layout_column="7"
+                    android:layout_columnWeight="1" />
+            </GridLayout>
+        </ScrollView>
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:alpha="0.7"
+            android:columnCount="8"
+            android:rowCount="1">
+
+            <com.jhony.timetable.mycourses.HeaderView
+                android:id="@+id/week_index"
+                style="@style/header"
+                android:layout_width="50dp"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:text="\n第x周" />
+
+            <TextView
+                android:id="@+id/sunday"
+                style="@style/header"
+                android:layout_row="0"
+                android:layout_column="1"
+                android:layout_columnWeight="1"
+                android:text="@string/sunday" />
+
+            <TextView
+                android:id="@+id/monday"
+                style="@style/header"
+                android:layout_row="0"
+                android:layout_column="2"
+                android:layout_columnWeight="1"
+                android:text="@string/monday" />
+
+            <TextView
+                android:id="@+id/tuesday"
+                style="@style/header"
+                android:layout_row="0"
+                android:layout_column="3"
+                android:layout_columnWeight="1"
+                android:text="@string/tuesday" />
+
+            <TextView
+                android:id="@+id/wednesday"
+                style="@style/header"
+                android:layout_row="0"
+                android:layout_column="4"
+                android:layout_columnWeight="1"
+                android:text="@string/wednesday" />
+
+            <TextView
+                android:id="@+id/thursday"
+                style="@style/header"
+                android:layout_row="0"
+                android:layout_column="5"
+                android:layout_columnWeight="1"
+                android:text="@string/thursday" />
+
+            <TextView
+                android:id="@+id/friday"
+                style="@style/header"
+                android:layout_row="0"
+                android:layout_column="6"
+                android:layout_columnWeight="1"
+                android:text="@string/friday" />
+
+            <TextView
+                android:id="@+id/saturday"
+                style="@style/header"
+                android:layout_row="0"
+                android:layout_column="7"
+                android:layout_columnWeight="1"
+                android:text="@string/saturday" />
+        </GridLayout>
+    </FrameLayout>
 </LinearLayout>

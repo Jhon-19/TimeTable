@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <CheckBox
+            android:id="@+id/kcmc_box"
+            style="@style/show_items"
+            android:text="@string/kcmc"/>
+
+        <CheckBox
+            android:id="@+id/cdmc_box"
+            style="@style/show_items"
+            android:text="@string/cdmc"/>
+
+        <CheckBox
+            android:id="@+id/kcxz_box"
+            style="@style/show_items"
+            android:text="@string/kcxz"/>
+
+        <CheckBox
+            android:id="@+id/jc_box"
+            style="@style/show_items"
+            android:text="@string/jc"/>
+
+        <CheckBox
+            android:id="@+id/zcd_box"
+            style="@style/show_items"
+            android:text="@string/zcd"/>
+
+        <CheckBox
+            android:id="@+id/kcxszc_box"
+            style="@style/show_items"
+            android:text="@string/kcxszc"/>
+
+        <CheckBox
+            android:id="@+id/xm_box"
+            style="@style/show_items"
+            android:text="@string/xm"/>
+
+        <CheckBox
+            android:id="@+id/zcmc_box"
+            style="@style/show_items"
+            android:text="@string/zcmc"/>
+
+        <CheckBox
+            android:id="@+id/khfsmc_box"
+            style="@style/show_items"
+            android:text="@string/khfsmc"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <Spinner
+                android:id="@+id/color_items"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_gravity="center"/>
+        </FrameLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/course_info"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+    </LinearLayout>
+
+</LinearLayout>

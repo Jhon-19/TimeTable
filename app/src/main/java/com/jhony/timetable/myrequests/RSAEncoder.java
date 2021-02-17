@@ -1,9 +1,6 @@
-package com.jhony.timetable.myutils;
+package com.jhony.timetable.myrequests;
 
-import java.io.UnsupportedEncodingException;
 import java.math.BigInteger;
-import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
 import java.util.Random;
 
 public class RSAEncoder {

@@ -1,19 +1,19 @@
-package com.jhony.timetable.datas;
+package com.jhony.timetable.mydatas;
 
 import org.litepal.crud.LitePalSupport;
 
 public class KbData extends LitePalSupport {
     private int id;
-    private String mCdmc;
-    private String mJc;
-    private String mKcmc;
-    private String mKcxszc;
-    private String mKcxz;
-    private String mKhfsmc;
-    private String mXm;
-    private String mXqjmc;
-    private String mZcd;
-    private String mZcmc;
+    private String mCdmc;//教室
+    private String mJc;//节数
+    private String mKcmc;//课程名
+    private String mKcxszc;//课程学识
+    private String mKcxz;//课程性质
+    private String mKhfsmc;//课后实践
+    private String mXm;//教师名称
+    private String mXqjmc;//星期几
+    private String mZcd;//周数
+    private String mZcmc;//教师职称
 
     public int getId() {
         return id;
