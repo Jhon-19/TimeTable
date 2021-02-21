@@ -76,7 +76,7 @@ public class CourseView extends AppCompatTextView
         //绘制文本
         TextPaint textPaint = new TextPaint();
         textPaint.setColor(Color.WHITE);
-        textPaint.setTextSize(19*density);
+        textPaint.setTextSize(14*density);
         canvas.translate(0, 5*density);
         StaticLayout layout = new StaticLayout(text, textPaint, Math.round(width-density),
                 Layout.Alignment.ALIGN_NORMAL, 1f, 0,

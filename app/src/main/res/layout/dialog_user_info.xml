@@ -22,7 +22,7 @@
             android:layout_column="1"
             android:layout_columnWeight="1"
             android:layout_gravity="center_vertical"
-            android:textSize="20sp" />
+            android:textSize="15sp" />
 
         <TextView
             style="@style/user_settings"
@@ -35,7 +35,7 @@
             android:layout_column="1"
             android:layout_columnWeight="1"
             android:layout_gravity="center_vertical"
-            android:textSize="20sp" />
+            android:textSize="15sp" />
 
         <TextView
             style="@style/user_settings"
@@ -135,7 +135,7 @@
                 android:layout_width="300dp"
                 android:layout_row="0"
                 android:layout_column="1"
-                android:textSize="20sp" />
+                android:textSize="15sp" />
 
             <!--        教室设置-->
             <TextView
@@ -148,7 +148,7 @@
                 android:layout_width="300dp"
                 android:layout_row="1"
                 android:layout_column="1"
-                android:textSize="20sp" />
+                android:textSize="15sp" />
 
             <!--        星期设置-->
             <TextView
@@ -172,7 +172,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/to"
-                    android:textSize="20sp" />
+                    android:textSize="15sp" />
 
                 <Spinner
                     android:id="@+id/user_end_week"
@@ -184,7 +184,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/day"
-                    android:textSize="20sp" />
+                    android:textSize="15sp" />
 
                 <Spinner
                     android:id="@+id/user_day"
@@ -215,7 +215,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/to"
-                    android:textSize="20sp" />
+                    android:textSize="15sp" />
 
                 <Spinner
                     android:id="@+id/user_end_joint"
